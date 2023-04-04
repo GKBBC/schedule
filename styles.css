@@ -1,3 +1,7 @@
+* {
+    overflow: auto;
+}
+
 body {
     margin: 0;
     background-image: url("images/pattern.png");
@@ -26,7 +30,7 @@ a {
     margin-top: 15px;
     margin-bottom: 10px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.75vw;
     color: white;
     text-decoration-line: none;
 }
@@ -46,9 +50,6 @@ a:hover, #active {
 
 #list {
     width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 35px;
     margin: 35px 5%;
     display: flex;
     justify-content: space-around;
@@ -69,7 +70,7 @@ li {
 }
 
 label {
-    font-size: 1.2em;
+    font-size: calc(10px + .5vw);
 }
 
 #home {
@@ -141,6 +142,7 @@ footer {
     height: 100%;
     text-align: center;
     background-color: #E76F51;
+    grid-column-start: var(--gridtype);
     font-size: 1em;
 }
 
@@ -161,83 +163,11 @@ footer {
     grid-column-end: 8;
     border-bottom: #E76F51 1px solid;
     display: inline;
+    grid-row-start: var(--gridtype);
 }
 
-.hour5 {
-    grid-row-start: 2;
-}
-.hour6 {
-    grid-row-start: 3;
-}
-.hour7 {
-    grid-row-start: 4;
-}
-.hour8 {
-    grid-row-start: 5;
-}
-.hour9 {
-    grid-row-start: 6;
-}
-.hour10 {
-    grid-row-start: 7;
-}
-.hour11 {
-    grid-row-start: 8;
-}
-.hour12 {
-    grid-row-start: 9;
-}
-.hour13 {
-    grid-row-start: 10;
-}
-.hour14 {
-    grid-row-start: 11;
-}
-.hour15 {
-    grid-row-start: 12;
-}
-.hour16 {
-    grid-row-start: 13;
-}
-.hour17 {
-    grid-row-start: 14;
-}
-.hour18 {
-    grid-row-start: 15;
-}
-.hour19 {
-    grid-row-start: 16;
-}
-.hour20 {
-    grid-row-start: 17;
-}
-.hour21 {
-    grid-row-start: 18;
-}
 .hour22 {
-    grid-row-start: 19;
     height: calc(100% + 15px);
-}
-.column1 {
-    grid-column-start: 1;
-}
-.column2 {
-    grid-column-start: 2;
-}
-.column3 {
-    grid-column-start: 3;
-}
-.column4 {
-    grid-column-start: 4;
-}
-.column5 {
-    grid-column-start: 5;
-}
-.column6 {
-    grid-column-start: 6;
-}
-.column7 {
-    grid-column-start: 7;
 }
 
 .event {
@@ -411,3 +341,39 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+
+#budgeth {
+    text-align: center;
+}
+
+table, th, td {
+    border: 2px solid #20617a;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 12.5%
+}
+
+table {
+    background-color: #E76F51;
+    border-radius: 15px;
+    margin: 0 auto;
+    width: 80vw;
+}
+
+@media only screen and (max-width: 600px) {
+    #list {
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .third {
+      display: block;
+      width: 70vw;
+      margin-bottom: 40px;
+    }
+    label {
+        font-size: 1.2em;
+    }
+  }

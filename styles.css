@@ -1,7 +1,3 @@
-* {
-    overflow: auto;
-}
-
 body {
     margin: 0;
     background-image: url("images/pattern.png");
@@ -135,6 +131,7 @@ footer {
     text-align: center;
     position: relative;
     bottom: 15px;
+    grid-column-start: 1;
 }
 
 .days {
@@ -176,6 +173,13 @@ footer {
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 5px;
+    box-sizing: border-box;
+    position: relative;
+    grid-row-start: var(--start);
+    grid-column-start: var(--day);
+    height: calc((var(--length)/60)*100%);
+    font-size: var(--fontsize, 1em);
+    top: calc((var(--afterhour)/60)*100%);
 }
 
 .transport {
@@ -196,141 +200,6 @@ footer {
 .tour {
     background-color: rgb(153, 96, 153);
     border: rgb(110, 54, 110) 2px solid;
-}
-
-#wtod {
-    grid-row-start: 4;
-    grid-column-start: 2;
-    height: 50%;
-    font-size: .75em;
-    position: relative;
-    top: 0%;
-}
-
-#dtoc {
-    grid-row-start: 6;
-    grid-column-start: 2;
-    height: 150%;
-    font-size: 1em;
-    position: relative;
-    top: 66.7%;
-}
-
-#warnerbros {
-    grid-row-start: 6;
-    grid-column-start: 3;
-    height: 700%;
-    font-size: 1em;
-    position: relative;
-    top: 25%;
-}
-
-#opening {
-    grid-row-start: 17;
-    grid-column-start: 3;
-    height: 150%;
-    font-size: 1em;
-    position: relative;
-    top: 50%;
-}
-
-#webfund {
-    grid-row-start: 3;
-    grid-column-start: 4;
-    height: 300%;
-    font-size: 1em;
-    position: relative;
-    top: 0%;
-}
-
-#santamonica {
-    grid-row-start: 12;
-    grid-column-start: 4;
-    height: 600%;
-    font-size: 1em;
-    position: relative;
-    top: 50%;
-}
-
-#busmeeting {
-    grid-row-start: 14;
-    grid-column-start: 4;
-    height: 100%;
-    font-size: 1em;
-    position: relative;
-    top: 0%;
-}
-
-#campaign {
-    grid-row-start: 15;
-    grid-column-start: 4;
-    height: 100%;
-    font-size: 1em;
-    position: relative;
-    top: 0%;
-}
-
-#webteam {
-    grid-row-start: 4;
-    grid-column-start: 5;
-    height: 400%;
-    font-size: 1em;
-    position: relative;
-    top: 0%;
-}
-
-#honors {
-    grid-row-start: 9;
-    grid-column-start: 5;
-    height: 150%;
-    font-size: 1em;
-    position: relative;
-    top: 50%;
-}
-
-#disneyland {
-    grid-row-start: 12;
-    grid-column-start: 5;
-    height: 400%;
-    font-size: 1em;
-    position: relative;
-    top: 0%;
-}
-
-#universal {
-    grid-row-start: 5;
-    grid-column-start: 6;
-    height: 1000%;
-    font-size: 1em;
-    position: relative;
-    top: 0%;
-}
-
-#awards {
-    grid-row-start: 15;
-    grid-column-start: 6;
-    height: 200%;
-    font-size: 1em;
-    position: relative;
-    top: 0%;
-}
-
-#ctod {
-    grid-row-start: 4;
-    grid-column-start: 7;
-    height: 150%;
-    font-size: 1em;
-    position: relative;
-    top: 75%;
-}
-
-#dtow {
-    grid-row-start: 11;
-    grid-column-start: 7;
-    height: 241.7%;
-    font-size: 1em;
-    position: relative;
-    top: 0%;
 }
 
 #todo {
@@ -362,6 +231,10 @@ table {
     width: 80vw;
 }
 
+#hi {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
     #list {
         align-content: center;
@@ -376,4 +249,8 @@ table {
     label {
         font-size: 1.2em;
     }
-  }
+
+    #hi {
+        font-size: 3em;
+    }
+}

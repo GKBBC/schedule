@@ -79,18 +79,42 @@ if (document.body.classList.contains("schedule")) {
                 }
             }
 
-            function resizeColumn(columnName, percent) {
-                for (let i = 0; i < columnName.length; i++) {
-                    columnName[i].style.width = percent;
-                }
-            }
-
             if (dd <= 25) {
                 hideColumn(column4);
                 hideColumn(column5);
                 hideColumn(column6);
                 hideColumn(column7);
                 grid.style.gridAutoColumns = ".5fr 1fr 1fr 0fr 0fr 0fr 0fr";
+            } else if (dd == 26) {
+                hideColumn(column2);
+                hideColumn(column5);
+                hideColumn(column6);
+                hideColumn(column7);
+                grid.style.gridAutoColumns = ".5fr 0fr 1fr 1fr 0fr 0fr 0fr";
+            } else if (dd == 27) {
+                hideColumn(column2);
+                hideColumn(column3);
+                hideColumn(column6);
+                hideColumn(column7);
+                grid.style.gridAutoColumns = ".5fr 0fr 0fr 1fr 1fr 0fr 0fr";
+            } else if (dd == 28) {
+                hideColumn(column2);
+                hideColumn(column3);
+                hideColumn(column4);
+                hideColumn(column7);
+                grid.style.gridAutoColumns = ".5fr 0fr 0fr 0fr 1fr 1fr 0fr";
+            } else {
+                hideColumn(column2);
+                hideColumn(column3);
+                hideColumn(column4);
+                hideColumn(column5);
+                grid.style.gridAutoColumns = ".5fr 0fr 0fr 0fr 0fr 1fr 1fr";
+            }
+
+            mover.style.display = "block";
+
+            for (let i = 0; i < document.getElementsByClassName("rowgridline").length; i++) {
+                document.getElementsByClassName("rowgridline")[i].style.display = "block";
             }
         }
     }

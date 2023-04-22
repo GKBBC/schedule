@@ -18,15 +18,15 @@ nav {
     margin-top: -20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 a {
-    width: 20%;
+    width: 25%;
     margin-top: 15px;
     margin-bottom: 10px;
     text-align: center;
-    font-size: 1.75vw;
+    font-size: 2vw;
     color: white;
     text-decoration-line: none;
 }
@@ -70,14 +70,14 @@ label {
 }
 
 #home {
-    width: 20%;
+    width: 20vw;
+    height: 20vw;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     background-color: #E76F51;
     border-radius: 50px;
     padding: 10px;
-    aspect-ratio: 1/1;
 }
 
 #bignumber {
@@ -231,10 +231,6 @@ table {
     width: 80vw;
 }
 
-#hi {
-    display: none;
-}
-
 @media only screen and (max-width: 600px) {
     #list {
         align-content: center;
@@ -250,7 +246,8 @@ table {
         font-size: 1.2em;
     }
 
-    #hi {
-        font-size: 3em;
+    #home {
+        width: 60vh;
+        height: 60vh;
     }
 }

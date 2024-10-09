@@ -14,17 +14,6 @@
     <title>BPA Nationals - California | Home</title>
 </head>
 <body class="counter">
-    <script>
-        // Check if the user is authenticated by looking for the flag in localStorage
-        var isAuthenticated = localStorage.getItem('authenticated');
-        
-        // If not authenticated, redirect to the login page
-        if (isAuthenticated !== 'true') {
-          window.location.href = 'login.html';
-        }
-      </script>
-
-
     <img src="images/california skinny.png" id="banner" alt="banner image">
     <nav>
         <a href="index.html" id="active">Home</a>
@@ -34,6 +23,7 @@
     </nav>
     <br>
     <br>
+    <button id="login-button">Login</button>
     <div id="home">
         <h1 id="bignumber">0</h1>
         <br>
@@ -66,5 +56,33 @@
         <p>1801 S Harbor Blvd, Anaheim, CA 92802</p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        // Initialize Netlify Identity
+        netlifyIdentity.init();
+    </script>    
+    <script>
+        // Initialize the Netlify Identity Widget
+        netlifyIdentity.init();
+    
+        // Event listener for the login button
+        document.getElementById('login-button').onclick = function() {
+            netlifyIdentity.open(); // Opens the Netlify Identity login modal
+        };
+    
+        // Handle the login event
+        netlifyIdentity.on('login', user => {
+            console.log("Logged in user:", user);
+            // Redirect to the protected content or do something upon login
+            window.location.href = 'protected.html'; // Change to your protected page
+        });
+    
+        // Handle logout
+        netlifyIdentity.on('logout', () => {
+            console.log("User logged out");
+            window.location.href = 'login.html'; // Redirect to login page
+        });
+    </script>
+    
 </body>
 </html>

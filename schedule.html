@@ -110,18 +110,22 @@
     <script src="script.js"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-        // Check if a user is logged in
-        var user = netlifyIdentity.currentUser();
+        // Initialize the Netlify Identity Widget
+        netlifyIdentity.init();
     
-        if (!user) {
-            // If no user is logged in, redirect to login page
-            window.location.href = 'login.html'; // Change to your login page
-        } else {
-            console.log("User is authenticated:", user);
-            // Optionally, display user info
-            document.getElementById("userInfo").textContent = `Welcome, ${user.user_metadata.full_name}`;
-        }
+        // Check if a user is logged in after the identity is ready
+        netlifyIdentity.on('init', user => {
+            if (!user) {
+                // If no user is logged in, redirect to login page
+                window.location.href = 'login.html'; // Change to your login page
+            } else {
+                console.log("User is authenticated:", user);
+                // Optionally, display user info
+                document.getElementById("userInfo").textContent = `Welcome, ${user.user_metadata.full_name}`;
+            }
+        });
     </script>
+    
     
 </body>
 </html>

@@ -56,35 +56,35 @@
         <p>1801 S Harbor Blvd, Anaheim, CA 92802</p>
     </footer>
     <script src="script.js"></script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-    // Initialize the Netlify Identity Widget
-    netlifyIdentity.init();
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        // Initialize the Netlify Identity Widget
+        netlifyIdentity.init();
 
-    // Event listener for the login button
-    document.getElementById('login-button').onclick = function() {
-        netlifyIdentity.open(); // Opens the Netlify Identity login modal
-    };
+        // Event listener for the login button
+        document.getElementById('login-button').onclick = function() {
+            netlifyIdentity.open(); // Opens the Netlify Identity login modal
+        };
 
-    // Handle the login event
-    netlifyIdentity.on('login', user => {
-        console.log("Logged in user:", user);
-        // Redirect to the protected content or do something upon login
-        window.location.href = 'protected.html'; // Change to your protected page
-    });
+        // Handle the login event
+        netlifyIdentity.on('login', user => {
+            console.log("Logged in user:", user);
+            // Redirect to the protected content or do something upon login
+            window.location.href = 'schedule.html'; // Change to your protected page
+        });
 
-    // Handle logout
-    netlifyIdentity.on('logout', () => {
-        console.log("User logged out");
-        window.location.href = 'login.html'; // Redirect to login page
-    });
-    
-    // Ensure the invite token is processed correctly
-    netlifyIdentity.on('invite', user => {
-        // When the invite is accepted, you can log or handle the user
-        console.log("User accepted invite:", user);
-    });
-</script>
+        // Handle logout
+        netlifyIdentity.on('logout', () => {
+            console.log("User logged out");
+            window.location.href = 'index.html'; // Redirect to login page
+        });
+        
+        // Ensure the invite token is processed correctly
+        netlifyIdentity.on('invite', user => {
+            // When the invite is accepted, you can log or handle the user
+            console.log("User accepted invite:", user);
+        });
+    </script>
 
     
 </body>
